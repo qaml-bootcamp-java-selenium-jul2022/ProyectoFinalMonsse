@@ -12,7 +12,7 @@ public class Vendedor {
     public void registrar(Cliente clienteNuevo){
         registgroDeClientes.put(clienteNuevo.getEmail(), clienteNuevo);
     }
-    public boolean buscar (String email){
+    public boolean buscarCliente(String email){
         return registgroDeClientes.containsKey(email);
     }
 
@@ -28,6 +28,23 @@ public class Vendedor {
         System.out.println("********************************************");
         System.out.println("TOTAL\t\t" + "$ " + totalVenta);
         return totalVenta;
+    }
+
+    public float renta(List<Prenda> prendasParaRentar, String emailCliente){
+        float totalRenta = 0;
+        if (buscarCliente(emailCliente)) {
+            System.out.println("PRENDA\t\t COSTO($)");
+            System.out.println("********************************************");
+            for (Prenda prenda : prendasParaRentar) {
+                totalRenta += prenda.getCostoRenta();
+                System.out.println(prenda.getTipoDePrenda() + "\t\t\t" + "$ " + prenda.getCostoRenta());
+            }
+            System.out.println("********************************************");
+            System.out.println("TOTAL\t\t" + "$ " + totalRenta);
+        } else {
+            System.out.println("El email del usuario es incorrecto o no existe, favor de validarlo y en su caso registrarse.");
+        }
+        return totalRenta;
     }
 
 }
