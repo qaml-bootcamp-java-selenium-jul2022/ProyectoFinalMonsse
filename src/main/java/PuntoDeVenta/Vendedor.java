@@ -26,7 +26,7 @@ public class Vendedor {
             System.out.println(prenda.getTipoDePrenda() + "\t\t\t" + "$ " + prenda.getCostoVenta());
         }
         System.out.println("********************************************");
-        System.out.println("TOTAL\t\t" + "$ " + totalVenta);
+        System.out.println("TOTAL DE LA VENTA\t\t" + "$ " + totalVenta);
         return totalVenta;
     }
 
@@ -40,7 +40,7 @@ public class Vendedor {
                 System.out.println(prenda.getTipoDePrenda() + "\t\t\t" + "$ " + prenda.getCostoRenta());
             }
             System.out.println("********************************************");
-            System.out.println("TOTAL\t\t" + "$ " + totalRenta);
+            System.out.println("TOTAL DE LA RENTA\t\t" + "$ " + totalRenta);
         } else {
             System.out.println("El email del usuario es incorrecto o no existe, favor de validarlo y en su caso registrarse.");
         }
